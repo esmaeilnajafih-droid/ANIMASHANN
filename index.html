@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}🎬 سینمای انیمیشن{% endblock %}
+
+{% block content %}
+
+{% include 'header.html' %}
+{% include 'search.html' %}
+
+<div class="result-count">
+    <i class="fas fa-list-ul"></i>
+    <strong>{{ result_count }}</strong> انیمیشن پیدا شد
+    {% if search_query %}
+    <span class="op-4">(از {{ total_count }} انیمیشن)</span>
+    {% endif %}
+</div>
+
+<div class="animations-list">
+    {% if animations %}
+        {% for anim in animations %}
+            {% set anim_index = loop.index0 %}
+            {% include 'card.html' %}
+        {% endfor %}
+    {% else %}
+        {% include 'empty.html' %}
+    {% endif %}
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock %}
+
+<style>
+.result-count {
+    text-align:center;
+    color:var(--text-secondary);
+    margin-bottom:30px;
+    font-size:1.05rem;
+}
+.result-count strong {
+    color:#fff;
+    font-size:1.3rem;
+    font-weight:900;
+}
+.animations-list {
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    max-height:700px;
+    overflow-y:auto;
+    padding-right:5px;
+}
+.animations-list::-webkit-scrollbar {
+    width:8px;
+}
+.animations-list::-webkit-scrollbar-track {
+    background:var(--glass-main);
+    border-radius:10px;
+}
+.animations-list::-webkit-scrollbar-thumb {
+    background:var(--gradient-main);
+    border-radius:10px;
+}
+@media (max-width:768px) {
+    .animations-list { max-height:500px; gap:12px; }
+}
+@media (max-width:480px) {
+    .animations-list { gap:10px; max-height:400px; }
+}
+</style>

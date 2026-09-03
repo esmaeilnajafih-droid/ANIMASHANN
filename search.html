@@ -1,0 +1,90 @@
+<form class="search-box" method="GET" action="/">
+    <input type="text" name="search" placeholder="🔍 جستجوی انیمیشن..." value="{{ search_query }}">
+    <button type="submit"><i class="fas fa-search"></i> جستجو</button>
+    {% if search_query %}<a href="/" class="reset-btn"><i class="fas fa-times"></i> پاک کردن</a>{% endif %}
+</form>
+<style>
+.search-box {
+    display:flex;
+    gap:15px;
+    margin-bottom:35px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.search-box input {
+    flex:1;
+    max-width:520px;
+    padding:20px 35px;
+    background:var(--glass-main);
+    backdrop-filter:blur(25px);
+    color:var(--text-primary);
+    border:1px solid var(--glass-border);
+    border-radius:60px;
+    font-size:1.1rem;
+    transition:all 0.8s;
+    font-family:inherit;
+    box-shadow:var(--shadow-main);
+}
+.search-box input:focus {
+    outline:none;
+    border-color:var(--accent-2);
+    transform:scale(1.03);
+}
+.search-box input::placeholder {
+    color:var(--text-secondary);
+    opacity:0.4;
+}
+.search-box button {
+    padding:20px 50px;
+    background:var(--gradient-main);
+    background-size:300% 300%;
+    animation:gradientMove 4s ease-in-out infinite;
+    color:white;
+    border:none;
+    border-radius:60px;
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:all 0.8s;
+    font-family:inherit;
+    font-weight:700;
+    box-shadow:0 15px 60px rgba(108,92,231,0.3);
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.search-box button:hover {
+    transform:translateY(-8px) scale(1.05);
+    box-shadow:0 25px 80px rgba(108,92,231,0.5);
+}
+.reset-btn {
+    padding:20px 35px;
+    background:rgba(255,107,107,0.12);
+    backdrop-filter:blur(25px);
+    color:var(--accent-1);
+    border:1px solid rgba(255,107,107,0.15);
+    border-radius:60px;
+    font-size:1.1rem;
+    cursor:pointer;
+    transition:all 0.8s;
+    font-family:inherit;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    box-shadow:var(--shadow-main);
+}
+.reset-btn:hover {
+    transform:translateY(-8px) scale(1.05);
+    background:rgba(255,107,107,0.2);
+}
+@media (max-width:768px) {
+    .search-box input { max-width:100%; width:100%; padding:14px 22px; font-size:0.95rem; }
+    .search-box button { width:100%; justify-content:center; padding:14px; font-size:0.95rem; }
+    .reset-btn { width:100%; justify-content:center; padding:14px; font-size:0.95rem; }
+}
+@media (max-width:480px) {
+    .search-box input { padding:12px 18px; font-size:0.85rem; height:44px; }
+    .search-box button { padding:12px 18px; font-size:0.85rem; height:44px; }
+    .reset-btn { padding:12px 18px; font-size:0.85rem; height:44px; }
+}
+</style>

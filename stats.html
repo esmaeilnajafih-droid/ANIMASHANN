@@ -1,0 +1,46 @@
+<div class="header-stats">
+    <div class="header-stat"><i class="fas fa-video"></i> <strong>{{ total_count }}</strong> انیمیشن</div>
+    <div class="header-stat"><i class="fas fa-check-circle"></i> <strong>{{ result_count }}</strong> نمایش داده شده</div>
+    <div class="header-stat"><i class="fas fa-eye"></i> <strong>۵۰,۰۰۰+</strong> بازدید کل</div>
+</div>
+<style>
+.header-stats {
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+.header-stat {
+    background:var(--glass-main);
+    backdrop-filter:blur(15px);
+    padding:12px 30px;
+    border-radius:50px;
+    border:1px solid var(--glass-border);
+    font-size:0.95rem;
+    color:var(--text-secondary);
+    transition:all 0.8s;
+    cursor:default;
+}
+.header-stat:hover {
+    transform:translateY(-5px) scale(1.05);
+    border-color:var(--accent-2);
+}
+.header-stat strong {
+    color:#fff;
+    font-size:1.2rem;
+}
+.header-stat i {
+    color:var(--accent-2);
+    margin-left:10px;
+}
+@media (max-width:768px) {
+    .header-stats { gap:15px; }
+    .header-stat { padding:8px 18px; font-size:0.8rem; }
+}
+@media (max-width:480px) {
+    .header-stats { gap:10px; }
+    .header-stat { padding:6px 14px; font-size:0.7rem; }
+    .header-stat strong { font-size:0.9rem; }
+}
+</style>

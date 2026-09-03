@@ -1,0 +1,32 @@
+<div class="empty-message">
+    <i class="fas fa-sad-tear"></i>
+    <h3>😕 انیمیشنی پیدا نشد</h3>
+    <p>کلمه دیگری جستجو کنید یا <a href="/">به صفحه اصلی</a> برگردید</p>
+</div>
+<style>
+.empty-message {
+    text-align:center;
+    padding:80px 20px;
+    color:var(--text-secondary);
+}
+.empty-message i {
+    font-size:5rem;
+    color:var(--accent-2);
+    margin-bottom:25px;
+    display:block;
+}
+.empty-message h3 {
+    font-size:2rem;
+    margin-bottom:12px;
+    color:var(--text-primary);
+}
+.empty-message a {
+    color:var(--accent-2);
+    text-decoration:none;
+    font-weight:600;
+}
+@media (max-width:480px) {
+    .empty-message h3 { font-size:1.2rem; }
+    .empty-message i { font-size:3rem; }
+}
+</style>
